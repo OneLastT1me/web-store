@@ -9,7 +9,7 @@ const DropHeaderMenu = () =>{
     const [isOpen, setIsOpen] = useState(false)
     const menuRef = useRef<HTMLDivElement>(null);
 
-    const toggle = () => setIsOpen(prev => !prev)
+    const open = () => setIsOpen(prev => !prev)
     const close = () => setIsOpen(false)
 
     useEffect(()=> {
@@ -28,7 +28,7 @@ const DropHeaderMenu = () =>{
 
     return(
         <div className="sm:relative" ref={menuRef}>
-            <button onClick={toggle} className="cursor-pointer">
+            <button onClick={isOpen ? close : open} className="cursor-pointer">
                 <Menu className=" w-7 h-7 text-white"/>
             </button>
             {isOpen && ( 
