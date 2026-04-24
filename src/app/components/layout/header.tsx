@@ -3,6 +3,7 @@
 import { Search, Menu } from "lucide-react"
 import DropHeaderMenu from "./dropHeaderMenu"
 import { useState } from "react"
+import Link from "next/link"
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -12,10 +13,10 @@ const Header = () => {
                 <nav className="sm:flex space-x-6 hidden">
                     <h1 className="text-white text-4xl cursor-pointer sm:hidden lg:block">Web-Store</h1>
                     <ul className="flex items-center space-x-4  mt-[4px]">
-                        <li><a href="/" className="text-white md:text-lg text-sm hover:text-[#1e4d3a] transition duration-300">Electronics</a></li>
-                        <li><a href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Clothing</a></li>
-                        <li><a href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Home & Garden</a></li>
-                        <li><a href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Sport</a></li>
+                        <li><Link href="/" className="text-white md:text-lg text-sm hover:text-[#1e4d3a] transition duration-300">Electronics</Link></li>
+                        <li><Link href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Clothing</Link></li>
+                        <li><Link href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Home & Garden</Link></li>
+                        <li><Link href="/" className="text-white md:text-lg text-sm hover:text-[#2e4d3b] transition duration-300">Sport</Link></li>
                     </ul>
                 </nav>
                 <nav className="flex space-x-3 mx-auto sm:mx-0 sm:w-auto w-full">
@@ -29,7 +30,7 @@ const Header = () => {
                     </div>
                     <button onClick={() => setIsOpen(true)} className="cursor-pointer">
                         <Menu className=" w-7 h-7 text-white"/>
-                        <DropHeaderMenu isOpen={isOpen} onClose={() => setIsOpen(prev => !prev)}/>
+                        <DropHeaderMenu isOpen={isOpen} onClose={() => setIsOpen(false)}/>
                     </button>
                 </nav>
             </div>

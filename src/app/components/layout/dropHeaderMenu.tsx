@@ -1,3 +1,4 @@
+'use client'
 
 import { UserPen, Bookmark, LogIn, Grid3x3 } from "lucide-react"
 import Link from "next/link"
@@ -29,7 +30,7 @@ const DropHeaderMenu = ({isOpen, onClose}: Props) =>{
         <div className="sm:relative" ref={menuRef}>
             {isOpen && ( 
                 <div className="absolute border-1 rounded-md text-white bg-black right-0 sm:mt-3 mt-8  w-[100%] sm:w-auto" >
-                    <Link href="/" onClick={() =>onClose()} className="flex space-x-2 w-full text-left px-4 py-2 hover:bg-gray-600 transition cursor-pointer">
+                    <Link href="/" onClick={() => onClose()} className="flex space-x-2 w-full text-left px-4 py-2 hover:bg-gray-600 transition cursor-pointer">
                         <UserPen />
                         <span>Profile</span>
                     </Link>
